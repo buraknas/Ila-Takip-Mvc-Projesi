@@ -1,0 +1,61 @@
+﻿@model IlaçTakip.Models.PatientInformation
+@{
+    ViewBag.Title = "AddMedicine";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <head runat="server">
+        <script src="~/Scripts/jquery-3.4.1.js"></script>
+        <script src="~/Scripts/js/jquery.timepicker.js"></script>
+        <link href="~/Scripts/js/jquery.timepicker.css" rel="stylesheet" />
+        <script>
+            $(function () {
+
+            
+
+            $('#disableTimeRangesExample').timepicker({
+                'disableTimeRanges': [
+                    
+                ]
+            })
+            });
+        </script>
+
+    </head>
+
+    @using (Html.BeginForm("AddMedicine", "UserPanel", FormMethod.Post))
+    {<br />
+        <input class="form-control" name="UserId" value="@ViewBag.UserId" type="hidden" />
+        <br />
+        @Html.LabelFor(x => x.PatientNameSurname)
+        @Html.TextBoxFor(x => x.PatientNameSurname, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.MedicineName)
+        @Html.TextBoxFor(x => x.MedicineName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.MedicineStartTime)
+        @Html.TextBoxFor(x => x.MedicineStartTime, new {@id= "disableTimeRangesExample", @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Statament)
+        @Html.TextBoxFor(x => x.Statament, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.MedicineRepetetionTime)
+        @Html.TextBoxFor(x => x.MedicineRepetetionTime, new { @class = "form-control" })
+        <br />
+        <button type="submit" class="btn btn-success">İlaç Ekle</button>
+
+    }
+    <div>
+        @if (ViewBag.Error != null)
+        {
+            <p class="text-danger" style="background-color:lemonchiffon; font-size:45px; font-family:'Times New Roman';font-style:italic;text-align:center;">@ViewBag.Error</p>
+        }
+
+
+    </div>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    
+</body>
+</html>

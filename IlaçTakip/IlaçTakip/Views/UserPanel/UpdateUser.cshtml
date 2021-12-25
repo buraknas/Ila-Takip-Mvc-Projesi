@@ -1,0 +1,54 @@
+﻿@model IlaçTakip.Models.PatientInformation
+@{
+    ViewBag.Title = "UpdateUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <head runat="server">
+        <script src="~/Scripts/jquery-3.4.1.js"></script>
+        <script src="~/Scripts/js/jquery.timepicker.js"></script>
+        <link href="~/Scripts/js/jquery.timepicker.css" rel="stylesheet" />
+        <script>
+            $(function () {
+
+
+
+                $('#disableTimeRangesExample').timepicker({
+                    'disableTimeRanges': [
+
+                    ]
+                })
+            });
+        </script>
+
+    </head>
+
+    @using (Html.BeginForm("UpdateUserCommand", "UserPanel", FormMethod.Post))
+    {
+        @Html.LabelFor(x => x.PatientId)
+        @Html.TextBoxFor(x => x.PatientId, new { @class = "form-control", @readonly = "readonly " })
+        <br />
+        @Html.LabelFor(x => x.PatientNameSurname)
+        @Html.TextBoxFor(x => x.PatientNameSurname, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.MedicineName)
+        @Html.TextBoxFor(x => x.MedicineName,  new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.MedicineStartTime)
+        @Html.TextBoxFor(x => x.MedicineStartTime, new { @id = "disableTimeRangesExample", @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.MedicineRepetetionTime)
+        @Html.TextBoxFor(x => x.MedicineRepetetionTime, new { @class = "form-control" })
+        <br />
+        <br />
+        @Html.LabelFor(x => x.Statament)
+        @Html.TextBoxFor(x => x.Statament, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+
+    }
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</body>
+</html>
+
+

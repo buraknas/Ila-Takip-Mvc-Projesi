@@ -1,0 +1,99 @@
+﻿@model IlaçTakip.Models.UserInformation
+@{
+    Layout = null;
+}
+
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+    <title>Register Page</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Validator Signup Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+    </script>
+    <!-- Meta tag Keywords -->
+    <!-- css file -->
+    <link rel="stylesheet" href="~/Screens/Register/css/style.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <!-- //css file -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese"
+          rel="stylesheet">
+    <!-- //web-fonts -->
+
+</head>
+
+<body>
+    <!-- title -->
+    <h1>
+        Register Panel
+    </h1>
+    <!-- //title -->
+    <!-- content -->
+    <div class="sub-main-w3">
+        <form validate="true" method="post">
+            <div class="form-group">
+                @Html.LabelFor(i => i.UserName)
+                @Html.TextBoxFor(i => i.UserName, new { @class = "form-control", @required = "required", @placeholder = "Enter your name." })
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(i => i.UserSurname)
+                @Html.TextBoxFor(i => i.UserSurname, new { @class = "form-control", required = "required", @placeholder = "Enter your surname." })
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(i => i.UserTelNumber)
+                @Html.TextBoxFor(i => i.UserTelNumber, new { @class = "form-control", maxlength = 11, required = "required", @placeholder = "Enter your telephone number." })
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(i => i.UserEmail)
+                @Html.TextBoxFor(i => i.UserEmail, new { @class = "form-control", required = "required", @type = "email", @placeholder = "Enter your e-mail address." })
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(i => i.Password)
+                @Html.TextBoxFor(i => i.Password, new { @class = "form-control", required = "required", @type = "password", @placeholder = "Enter your password." })
+
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+            <div>
+                @if (ViewBag.Error != null)
+                {
+                    <p>@ViewBag.Error</p>
+                }
+            </div>
+        </form>
+    </div>
+    <!-- //content -->
+    <!-- copyright -->
+    <div class="footer">
+
+    </div>
+    <!-- //copyright -->
+    <!-- Jquery -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <!-- //Jquery -->
+    <!-- Jquery -->
+    <script src="js/jquery-simple-validator.min.js"></script>
+    <!-- //Jquery -->
+
+</body>
+<
+</html>

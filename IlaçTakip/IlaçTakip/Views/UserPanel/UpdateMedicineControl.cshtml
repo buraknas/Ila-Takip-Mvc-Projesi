@@ -1,0 +1,29 @@
+﻿@model IlaçTakip.Models.PatientMedicineControl
+@{
+    ViewBag.Title = "UpdateMedicineControl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateMedicineControlCommand", "UserPanel", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.RegistrationId)
+    @Html.TextBoxFor(x => x.RegistrationId, new { @class = "form-control", @readonly = "readonly " })
+    <br />
+    @Html.LabelFor(x => x.PatientNameSurname)
+    @Html.TextBoxFor(x => x.PatientNameSurname, new { @class = "form-control", @readonly = "readonly " })
+    <br />
+    @Html.LabelFor(x => x.MedicineName)
+    @Html.TextBoxFor(x => x.MedicineName, new { @class = "form-control", @readonly = "readonly " })
+    <br />
+    <br />
+    @Html.LabelFor(x => x.MedicineStartTime)
+    @Html.TextBoxFor(x => x.MedicineStartTime, new { @class = "form-control", @readonly = "readonly " })
+    <br />
+    @Html.LabelFor(x => x.TakeTheMedicine)
+    @Html.TextBoxFor(x => x.TakeTheMedicine, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+

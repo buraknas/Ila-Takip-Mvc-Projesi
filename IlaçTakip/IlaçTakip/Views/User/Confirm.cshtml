@@ -1,0 +1,18 @@
+﻿
+@{
+    Layout = null;
+}
+
+<br />
+<br />
+<div class="alert alert-warning" id="previous">
+    <strong>Confirm Your Account</strong>
+    @using (Html.BeginForm("RegisterConfirm", "User", new { userId = @ViewBag.userId }, FormMethod.Post))
+    {
+        <button type="submit" class="btn btn-success">Confirm</button>
+    }
+
+</div>
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />

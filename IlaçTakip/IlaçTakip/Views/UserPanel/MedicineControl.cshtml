@@ -1,0 +1,55 @@
+﻿@using IlaçTakip.Models
+@model List<PatientMedicineControl>
+@{
+    ViewBag.Title = "MedicineControl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<br />
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+<div>
+    <table class="table table-bordered">
+        <tr>
+
+            <th>Hasta Adı Soyadı</th>
+            <th>İlaç Adı</th>
+            <th>İlaç Zamanı</th>
+            <th>İlaç İçildi Mi? </th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="font-size:large">@item.PatientNameSurname</td>
+                <td style="font-size:large">@item.MedicineName</td>
+                <td style="font-size:large">@item.MedicineStartTime</td>
+                <td style="font-size:large">@item.TakeTheMedicine</td>
+                <td><a href="/UserPanel/UpdateMedicineControl/@item.RegistrationId" class="btn btn-warning"> GÜNCELLE</a></td>
+            </tr>
+        }
+
+    </table>
+</div>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+

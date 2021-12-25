@@ -1,0 +1,54 @@
+﻿@using IlaçTakip.Models
+@model List<PatientInformation>
+@{
+    ViewBag.Title = "MedicineList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br />
+      <style>
+          table {
+              border-collapse: collapse;
+              width: 100%;
+          }
+
+          th, td {
+              text-align: left;
+              padding: 8px;
+          }
+
+          tr:nth-child(even) {
+              background-color: #f2f2f2
+          }
+
+          th {
+              background-color: #04AA6D;
+              color: white;
+          }
+      </style>
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Hasta Adı Soyadı</th>
+            <th>İlaç Adı</th>
+            <th>İlaca Başlama Zamanı</th>
+            <th>İlaç Tekrar Süresi</th>
+            <th>İlaç Hakkında</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td style="font-size:large">@item.PatientNameSurname</td>
+        <td style="font-size:large">@item.MedicineName</td>
+        <td style="font-size:large">@item.MedicineStartTime</td>
+        <td style="font-size:large">@item.MedicineRepetetionTime</td>
+        <td style="font-size:large">@item.Statament</td>
+        <td><a href="/UserPanel/DeleteUser/@item.PatientId" class="btn btn-danger">SİL</a></td>
+        <td><a href="/UserPanel/UpdateUser/@item.PatientId" class="btn btn-warning"> GÜNCELLE</a></td>
+    </tr>
+        }
+
+    </table>
+</div>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
